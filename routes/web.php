@@ -17,6 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/getDayData', 'HomeController@getDayData')->name('day.data.get');
-Route::post('/saveDayData', 'HomeController@saveDayData')->name('day.data.save');
+Route::middleware('auth')->get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')->get('/getDayData', 'HomeController@getDayData')->name('day.data.get');
+Route::middleware('auth')->post('/saveDayData', 'HomeController@saveDayData')->name('day.data.save');

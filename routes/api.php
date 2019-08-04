@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/apiAuth', 'Auth\LoginController@apiAuth')->name('api.auth');
+Route::middleware('auth:api')->get('/getDayData', 'HomeController@getDayData')->name('api.day.data.get');
+Route::middleware('auth:api')->post('/saveDayData', 'HomeController@saveDayData')->name('api.day.data.save');
