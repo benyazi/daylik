@@ -70,10 +70,14 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">
+                            Войти
+                        </a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">
+                                Регистрация
+                            </a>
                         @endif
                     @endauth
                 </div>
@@ -81,17 +85,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    DAYLIK
                 </div>
-
+                <div class="mt-2 mb-2" style="margin-top: 15px; margin-bottom: 15px;">План на день</div>
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('login') }}">Войти</a>
+                    <a href="{{ route('register') }}">Регистрация</a>
                 </div>
             </div>
         </div>
